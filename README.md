@@ -5,8 +5,13 @@ Staff-Level Proof of Concept (PoC) | Databricks • AWS • SCADA • Event-Driv
 ## 📋 Executive Summary
 Mia Ai Volt Streams is a high-impact architecture blueprint designed for the Utility and Energy sectors. It demonstrates a secure, scalable "Data Nervous System" that ingests high-velocity Operational Technology (OT) data—such as SCADA, PMU, and IoT sensor telemetry—into an AWS-based Databricks Lakehouse.
 
-This project solves the "Air-Gap Challenge" by providing a governed, automated bridge between high-security industrial zones (Purdue Level 3) and enterprise analytics environments (Purdue Level 4/5), replacing legacy point-to-point integrations with a reusable Data Product framework.
+## The Narrative
+> In the utility sector, we cannot simply `query` a database. We must interface with the pulse of the grid itself. This repository demonstrates how I bridge the gap between air-gapped Industrial Historians and Cloud-native Agentic AI. I don't build simple ETL pipelines; I build `Nervous Systems` for the modern power grid.
+> — Alf
 
+
+
+This project solves the "Air-Gap Challenge" by providing a governed, automated bridge between high-security industrial zones (Purdue Level 3) and enterprise analytics environments (Purdue Level 4/5), replacing legacy point-to-point integrations with a reusable Data Product framework.
 ## 🏗 Architectural Pillars
 1. The Secure Boundary (AWS PrivateLink)
 Navigates complex network constraints by using AWS PrivateLink and VPC Endpoints. This ensures that sensitive grid telemetry moves from the OT DMZ to the Databricks ingestion layer without ever traversing the public internet, maintaining NERC CIP and NIST 800-53 alignment.
