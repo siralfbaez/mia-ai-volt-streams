@@ -3,7 +3,7 @@ Enterprise "Nervous System" for OT-to-Cloud Data Architecture
 Staff-Level Proof of Concept (PoC) | Databricks • AWS • SCADA • Event-Driven AI
 
 ## 📋 Executive Summary
-mia-ai-volt-streams is a high-impact architecture blueprint designed for the Utility and Energy sectors. It demonstrates a secure, scalable "Data Nervous System" that ingests high-velocity Operational Technology (OT) data—such as SCADA, PMU, and IoT sensor telemetry—into an AWS-based Databricks Lakehouse.
+Mia Ai Volt Streams is a high-impact architecture blueprint designed for the Utility and Energy sectors. It demonstrates a secure, scalable "Data Nervous System" that ingests high-velocity Operational Technology (OT) data—such as SCADA, PMU, and IoT sensor telemetry—into an AWS-based Databricks Lakehouse.
 
 This project solves the "Air-Gap Challenge" by providing a governed, automated bridge between high-security industrial zones (Purdue Level 3) and enterprise analytics environments (Purdue Level 4/5), replacing legacy point-to-point integrations with a reusable Data Product framework.
 

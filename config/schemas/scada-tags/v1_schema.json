@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SCADA Telemetry Tag",
+  "description": "Standardized schema for industrial sensor telemetry ingestion into Databricks Bronze Layer",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "source_id": { "type": "string", "description": "Unique ID of the SCADA/Historian source" },
+        "protocol": { "type": "string", "enum": ["OPC-UA", "MQTT", "Modbus", "DNP3"] },
+        "region": { "type": "string", "example": "US-EAST-GRID" }
+      },
+      "required": ["source_id", "protocol"]
+    },
+    "payload": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tag_name": { "type": "string", "example": "SUBSTATION_04_TRANSFORMER_TEMP" },
+          "value": { "type": "number" },
+          "unit": { "type": "string", "example": "Celsius" },
+          "quality_code": { 
+            "type": "integer", 
+            "description": "0=Good, 1=Uncertain, 2=Bad (OPC Standard)" 
+          },
+          "source_timestamp": { 
+            "type": "string", 
+            "format": "date-time", 
+            "description": "The exact time the sensor read the value" 
+          },
+          "ingest_timestamp": { 
+            "type": "string", 
+            "format": "date-time", 
+            "description": "The time the gateway received the data" 
+          }
+        },
+        "required": ["tag_name", "value", "source_timestamp"]
+      }
+    }
+  },
+  "required": ["metadata", "payload"]
+}
