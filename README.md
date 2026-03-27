@@ -15,35 +15,33 @@ Navigates complex network constraints by using AWS PrivateLink and VPC Endpoints
 
 ```mermaid
 graph TD
-    subgraph "OT Zone (Purdue Level 3 - Secure DMZ)"
+    subgraph OT_Zone [OT Zone - Purdue Level 3 Secure DMZ]
         SCADA[SCADA System / Historian] -->|OPC-UA / MQTT| IGW[mia-ai-integration-gateway]
         IGW -->|TLS 1.3 / Avro| KAFKA[Apache Kafka / MSK]
-    }
+    end
 
-    subgraph "Secure Transport (The Nervous System)"
+    subgraph Transport [Secure Transport - The Nervous System]
         KAFKA -->|AWS PrivateLink| PL[VPC Endpoint]
-    }
+    end
 
-    subgraph "Cloud Zone (Purdue Level 4 - Databricks AWS)"
+    subgraph Cloud_Zone [Cloud Zone - Purdue Level 4 Databricks AWS]
         PL -->|Structured Streaming| BZ[(Bronze: Raw Landing)]
         BZ -->|Delta Live Tables| SV[(Silver: Validated & Smoothed)]
         SV -->|Refined Aggregates| GD[(Gold: Grid-State Data Products)]
-    }
+    end
 
-    subgraph "Agentic Intelligence Layer"
+    subgraph Intelligence [Agentic Intelligence Layer]
         GD -->|Metadata Feed| AA[mia-ai-agentic-monitor]
         AA -->|Anomaly Alerts| OPS[Grid Operations Dashboard]
         AA -->|Optimization| ML[Load Forecasting Models]
-    }
+    end
 
     style SCADA fill:#f96,stroke:#333,stroke-width:2px
     style IGW fill:#69f,stroke:#333,stroke-width:2px
     style KAFKA fill:#69f,stroke:#333,stroke-width:2px
     style AA fill:#bbf,stroke:#333,stroke-width:4px
     style PL fill:#f66,stroke:#333,stroke-dasharray: 5 5
-
-
-    ```
+```
 ---
 
 ## Medallion Stream Processing (Databricks DLT)
@@ -61,7 +59,6 @@ Integrates an AI-Agentic Monitor that uses LLMs to observe stream metadata, aler
 ## 📂 Repository Structure
 
 Plaintext
-
 ├── api/                # OpenAPI/Proto definitions for the Integration Surface
 ├── config/schemas/     # Data Contracts (SCADA Tags, Grid Topology)
 ├── docs/architecture/  # Purdue Model alignment & NIST compliance maps
