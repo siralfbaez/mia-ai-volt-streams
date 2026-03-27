@@ -57,8 +57,6 @@ Utilizes Delta Live Tables (DLT) for a robust three-tier data evolution:
 Integrates an AI-Agentic Monitor that uses LLMs to observe stream metadata, alerting on "Sensor Drift" or anomalous patterns in grid topology that traditional threshold-based monitoring might miss.
 
 ## 📂 Repository Structure
-
-Plaintext
 ├── api/                # OpenAPI/Proto definitions for the Integration Surface
 ├── config/schemas/     # Data Contracts (SCADA Tags, Grid Topology)
 ├── docs/architecture/  # Purdue Model alignment & NIST compliance maps
@@ -71,7 +69,6 @@ Plaintext
 ---
 
 ## 🛠 Technical Stack
-Plaintext
 | Component | Technology |
 | :--- | :--- |
 | **Cloud** | AWS (VPC, MSK, S3, Lambda) |
