@@ -71,7 +71,7 @@ Plaintext
 ---
 
 ## 🛠 Technical Stack
-
+Plaintext
 | Component | Technology |
 | :--- | :--- |
 | **Cloud** | AWS (VPC, MSK, S3, Lambda) |
