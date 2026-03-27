@@ -1,0 +1,6 @@
+pyspark>=3.4.0
+pandas
+langchain
+langchain-community
+openai
+python-dotenv

@@ -89,4 +89,13 @@ Integrates an AI-Agentic Monitor that uses LLMs to observe stream metadata, aler
 ## 🎯 Mission Alignment: The Utility Perspective
 In a regulated utility environment, data is only as valuable as it is secure. mia-ai-volt-streams moves beyond simple ETL; it provides the Enterprise Integration Surface required to modernize legacy grid operations into a proactive, AI-ready infrastructure.
 
+## How to Run the End-to-End Test
+Now you can open two terminal windows to show off the "Nervous System" in action:
 
+1. **Terminal 1:** Run `make monitor-dev`. The agent will start polling the Gold layer, waiting for data.
+
+2. **Terminal 2:** Run `make mock-failure`.
+
+3. **The Result:** Your Terminal 1 should almost immediately light up with:
+
+> 🚨 ALERT: CRITICAL_THERMAL_ANOMALY - 180.5°F detected in Winter (32.0°F ambient) with low load. Suggesting immediate crew dispatch for oil-level check.
