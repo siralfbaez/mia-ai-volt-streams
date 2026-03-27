@@ -99,3 +99,107 @@ Now you can open two terminal windows to show off the "Nervous System" in action
 3. **The Result:** Your Terminal 1 should almost immediately light up with:
 
 > 🚨 ALERT: CRITICAL_THERMAL_ANOMALY - 180.5°F detected in Winter (32.0°F ambient) with low load. Suggesting immediate crew dispatch for oil-level check.
+---
+## 🚀 Quick Start: Running the Nervous System
+Follow these steps to deploy the infrastructure, verify the Fahrenheit logic, and simulate a critical grid failure.
+
+1. Prerequisites
+   AWS CLI configured with appropriate permissions.
+
+Terraform (v1.5+) installed.
+
+Python 3.10+ and venv module.
+
+A Databricks Account ID (for the workspace module).
+
+2. Initialization
+   Set your Databricks Account ID as an environment variable and initialize the project:
+```bash
+export TF_VAR_databricks_account_id="your-id-here"
+make init
+```
+
+## 3. Infrastructure Deployment
+Provision the PrivateLink security layer and the Databricks Workspace:
+
+```bash 
+make infrastructure
+```
+
+## 4. Verification & Testing
+Run the automated test suite to validate the 175°F Winter Anomaly logic:
+
+```bash
+make test
+```
+
+## 5. Live Demo: The "Winter Failure" Scenario
+Open two terminal windows to see the Agentic Monitor in action.
+
+* **Terminal A (The Monitor):** Starts the real-time AI observation loop.
+
+```bash
+make monitor-dev
+```
+
+* **Terminal B (The Injector):** Simulates a 180°F transformer failure in freezing weather.
+
+```bash
+make mock-failure
+```
+
+## 6. Cleanup
+To avoid unnecessary AWS costs after your demo, run the cleanup script:
+```bash
+bash scripts/cleanup.sh
+```
+
+---
+🏗 Repository Structure Alignment
+
+| Directory | Component | Responsibility |
+| :--- | :--- | :--- |
+| api/ | **Contracts** | OpenAPI and Protobuf definitions for OT-to-IT handshakes. |
+| config/schemas/ | **Truth** | JSON Schema definitions for SCADA tags and Grid Topology. |
+| docs/ | **Knowledge** | Architectural deep dives and Purdue Model alignment docs. |
+| notebooks/ | **Pipelines** | Databricks Delta Live Tables (DLT) for Medallion evolution. |
+| pkg/ | **Logic** | Shared Python modules for protocol translation and resilience. |
+| services/ai-agentic-monitor/ | **The Brain** | LLM-powered observability and Fahrenheit anomaly prompts. |
+| services/integration-gateway/ | **The Front Door** | High-throughput API for receiving raw Historian telemetry. |
+| services/transformation-worker/ | **The Worker** | Internal logic for Silver-layer mapping and mock-injection. |
+| terraform/ | **The Spine** | Automated AWS PrivateLink and Databricks Workspace setup. |
+
+
+---
+## 🌲 Tree directory structure
+
+```
+mia-ai-volt-streams/
+├── api/                        # Contracts: OpenAPI/Protobuf definitions
+│   ├── proto/
+│   └── openapi.yaml
+├── config/
+│   └── schemas/                # Truth: JSON Schema for SCADA/Grid tags
+│       ├── grid-topology.json
+│       └── scada-tags.json
+├── docs/                       # Knowledge: Purdue Model & Arch docs
+├── notebooks/                  # Pipelines: Databricks DLT Medallion evolution
+│   ├── bronze/
+│   ├── silver/
+│   └── gold/
+├── pkg/                        # Logic: Shared Python modules
+│   └── resilience/
+├── services/
+│   ├── ai-agentic-monitor/     # The Brain: LLM observability & prompts
+│   │   ├── prompts/
+│   │   └── monitor_logic.py
+│   ├── integration-gateway/    # The Front Door: High-throughput API
+│   │   └── main.go
+│   └── transformation-worker/  # The Worker: Silver-layer & mock-injection
+├── terraform/                  # The Spine: AWS PrivateLink & Databricks setup
+│   ├── modules/
+│   ├── main.tf
+│   └── variables.tf
+├── .gitignore
+└── README.md
+```
