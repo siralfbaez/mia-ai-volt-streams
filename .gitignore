@@ -1,0 +1,74 @@
+# --- Go Binaries & Tooling ---
+bin/
+main
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+go.work
+
+# --- Terraform & Cloud Provider State ---
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+*.tfvars
+*.tfvars.json
+# Generic Auth keys
+auth-key.json
+# AWS specific
+.aws/
+credentials
+# GCP specific (from your template)
+gcp-key.json
+
+# --- Databricks & Notebooks ---
+# Prevents local workspace metadata and hidden sync files
+.databricks/
+.ipynb_checkpoints/
+*.dbfs
+# If using Databricks CLI / Repos sync
+.databricks_history
+
+# --- Secrets & Environment ---
+.env
+.env.local
+.env.*.local
+.env.example  # We keep this in Git as a template, but usually ignore actual .env
+# Specific to your project naming
+.mia-secrets
+
+# --- IDEs & OS ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- Python Specific ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+.python-version
+poetry.lock
+pip-log.txt
+
+# --- Logs & Telemetry (The "Nervous System" waste) ---
+*.log
+logs/
+events.out.tfevents.*
+.fluentd/
+
+# --- Project Specific Documentation ---
+docs/site/
+.obsidian/
