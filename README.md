@@ -7,7 +7,7 @@ Mia Ai Volt Streams is a high-impact architecture blueprint designed for the Uti
 
 ## The Narrative
 > In the utility sector, we cannot simply `query` a database. We must interface with the pulse of the grid itself. This repository demonstrates how I bridge the gap between air-gapped Industrial Historians and Cloud-native Agentic AI. I don't build simple ETL pipelines; I build `Nervous Systems` for the modern power grid.
-> — Alf
+> — Alf B
 
 
 
