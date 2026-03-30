@@ -6,5 +6,5 @@ if [[ \$REPLY =~ ^[Yy]\$ ]]
 then
     echo "🧹 Tearing down Databricks and AWS PrivateLink and some..."
     cd terraform/environments/dev && terraform destroy -auto-approve
-    echo "✅ Infrastructure removed."
+    echo "✅ Infrastructure removed...!"
 fi
