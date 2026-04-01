@@ -9,7 +9,7 @@ def run_monitor():
     PROMPT_PATH = "services/ai-agentic-monitor/prompts/winter_anomaly_detection.md"
     handler = AnomalyHandler(PROMPT_PATH)
 
-    print("⚡ mia-ai-volt-streams: Agentic Monitor Active [Units: °F] ⚡")
+    print("⚡ mia-ai-volt-streams: Agentic Monitor Active [Units: °F] ⚡⚡⚡")
 
     while True:
         # 1. Query the Gold Layer for the latest asset state
